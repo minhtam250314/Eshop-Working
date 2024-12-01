@@ -1,6 +1,6 @@
 import React from "react";
-import { WrapperContent, WrapperLableText, WrapperTextValue } from "./style";
-import { Checkbox } from "antd";
+import { WrapperContent, WrapperLableText, WrapperTextPrice, WrapperTextValue } from "./style";
+import { Checkbox, Rate } from "antd";
 
 
 const NavbarComponent = () => {
@@ -15,15 +15,33 @@ const NavbarComponent = () => {
                 })
             case 'checkbox':
                 return (
-                    <Checkbox.Group style={{ width: '100%', display: 'flex', flexDirection: 'column' }} onChange={onChange}>
+                    <Checkbox.Group style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '12px' }} onChange={onChange}>
                         {options.map((option) => {
                             return (
-                                <Checkbox value={option.value}>{option.label}</Checkbox>
+                                <Checkbox style={{ marginLeft: 0 }} value={option.value}>{option.label}</Checkbox>
                             )
                         })}
-                        <Checkbox value="B">B</Checkbox>
                     </Checkbox.Group>
                 )
+
+            case 'star':
+                return options.map((option) => {
+                    console.log('check', option)
+                    return (
+                        <div style={{ display: 'flex' }}>
+                            <Rate style={{ fontSize: '12px' }} disabled defaultValue={option} />
+                            <span> {`tu ${option} sao`}</span>
+                        </div>
+
+                    )
+                })
+
+            case 'price':
+                return options.map((option) => {
+                    return (
+                        <WrapperTextPrice>{option}</WrapperTextPrice>
+                    )
+                })
             default:
                 return {}
         }
@@ -34,10 +52,18 @@ const NavbarComponent = () => {
             <WrapperLableText>Lable</WrapperLableText>
             <WrapperContent>
                 {renderContent('text', ['Tu Lanh', 'TV', 'MayGiat'])}
+            </WrapperContent>
+            <WrapperContent>
                 {renderContent('checkbox', [
                     { value: 'a', label: 'A' },
                     { value: 'b', label: 'B' },
                 ])}
+            </WrapperContent>
+            <WrapperContent>
+                {renderContent('star', [3, 4, 5])}
+            </WrapperContent>
+            <WrapperContent>
+                {renderContent('price', ['duoi 40', 'tren 50.000'])}
             </WrapperContent>
         </div>
     )
