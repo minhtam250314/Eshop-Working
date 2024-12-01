@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleNameProduct, WrapperCardStyle, WrapperDiscountText, WrapperImageStyle, WrapperPriceText, WrapperReporText } from "./style";
+import { StyleNameProduct, WrapperCardStyle, WrapperDiscountText, WrapperPriceText, WrapperReporText } from "./style";
 import { StarFilled } from '@ant-design/icons';
 import logo from '../../assets/images/logo.png';
 
@@ -12,7 +12,15 @@ const CardComponent = ({ name }) => {
             bodyStyle={{ padding: '10px' }}
             cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
         >
-            <WrapperImageStyle src={logo} alt="logo" />
+            <img
+                src={logo}
+                style={{
+                    width: '68px', height: '14px', position: 'absolute', top: '-1px', left: '-1px',
+                    borderRadius: '3px'
+                }}
+            />
+
+
             <StyleNameProduct>Iphone</StyleNameProduct>
             <WrapperReporText>
                 <span style={{ marginRight: '4px' }}>

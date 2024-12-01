@@ -10,14 +10,14 @@ export const WrapperCardStyle = styled(Card)`
     position: relative;
 `
 //img chinh hang ben cart
-export const WrapperImageStyle = styled.img`
-    top: -1px;
-    left: -1px;
-    border-top-left-radius: 3px;
-    position: absolute;
-    height: 14px !important;
-    width: 68px !important;
-`
+// export const WrapperImageStyle = styled.img`
+//     top: -1px;
+//     left: -1px;
+//     border-top-left-radius: 3px;
+//     position: absolute;
+//     height: 14px !important;
+//     width: 68px !important;
+// `
 
 export const StyleNameProduct = styled.div`
     font-weight: 400;
