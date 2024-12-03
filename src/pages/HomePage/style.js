@@ -20,3 +20,11 @@ export const WrapperButtonMore = styled(ButtonComponent)`
     width: 100%
     text-align: center;
 `
+
+export const WrapperProducts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+`
